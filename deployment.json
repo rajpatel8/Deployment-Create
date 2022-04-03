@@ -1,0 +1,212 @@
+{
+  "id": "/subscriptions/0ad2c168-b54e-458a-baae-f7bc6583586c/resourceGroups/ACE/providers/Microsoft.Resources/deployments/CreateVm-canonical.0001-com-ubuntu-server-focal-2-20220403131041",
+  "name": "CreateVm-canonical.0001-com-ubuntu-server-focal-2-20220403131041",
+  "type": "Microsoft.Resources/deployments",
+  "tags": {
+    "primaryResourceId": "/subscriptions/0ad2c168-b54e-458a-baae-f7bc6583586c/resourcegroups/ACE/providers/Microsoft.Compute/virtualMachines/AJ",
+    "marketplaceItemId": "Microsoft.VirtualMachine",
+    "provisioningHash": "SolutionProvider"
+  },
+  "properties": {
+    "templateHash": "17209263973571356850",
+    "parameters": {
+      "location": {
+        "type": "String",
+        "value": "centralindia"
+      },
+      "networkInterfaceName": {
+        "type": "String",
+        "value": "aj774"
+      },
+      "enableAcceleratedNetworking": {
+        "type": "Bool",
+        "value": true
+      },
+      "networkSecurityGroupName": {
+        "type": "String",
+        "value": "AJ-nsg"
+      },
+      "networkSecurityGroupRules": {
+        "type": "Array",
+        "value": [
+          {
+            "name": "HTTPS",
+            "properties": {
+              "priority": 300,
+              "protocol": "TCP",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "443"
+            }
+          }
+        ]
+      },
+      "subnetName": {
+        "type": "String",
+        "value": "default"
+      },
+      "virtualNetworkName": {
+        "type": "String",
+        "value": "ACE-vnet"
+      },
+      "addressPrefixes": {
+        "type": "Array",
+        "value": [
+          "10.0.0.0/16"
+        ]
+      },
+      "subnets": {
+        "type": "Array",
+        "value": [
+          {
+            "name": "default",
+            "properties": {
+              "addressPrefix": "10.0.0.0/24"
+            }
+          }
+        ]
+      },
+      "publicIpAddressName": {
+        "type": "String",
+        "value": "AJ-ip"
+      },
+      "publicIpAddressType": {
+        "type": "String",
+        "value": "Dynamic"
+      },
+      "publicIpAddressSku": {
+        "type": "String",
+        "value": "Basic"
+      },
+      "pipDeleteOption": {
+        "type": "String",
+        "value": "Detach"
+      },
+      "virtualMachineName": {
+        "type": "String",
+        "value": "AJ"
+      },
+      "virtualMachineComputerName": {
+        "type": "String",
+        "value": "AJ"
+      },
+      "virtualMachineRG": {
+        "type": "String",
+        "value": "ACE"
+      },
+      "osDiskType": {
+        "type": "String",
+        "value": "Premium_LRS"
+      },
+      "osDiskDeleteOption": {
+        "type": "String",
+        "value": "Delete"
+      },
+      "virtualMachineSize": {
+        "type": "String",
+        "value": "Standard_D2s_v3"
+      },
+      "nicDeleteOption": {
+        "type": "String",
+        "value": "Detach"
+      },
+      "adminUsername": {
+        "type": "String",
+        "value": "aj"
+      },
+      "adminPassword": {
+        "type": "SecureString"
+      }
+    },
+    "mode": "Incremental",
+    "debugSetting": {
+      "detailLevel": "None"
+    },
+    "provisioningState": "Running",
+    "timestamp": "2022-04-03T07:44:51.8680469Z",
+    "duration": "PT0.7014964S",
+    "correlationId": "15afcdea-6f94-4359-a0e9-9f8d48346087",
+    "providers": [
+      {
+        "namespace": "Microsoft.Network",
+        "resourceTypes": [
+          {
+            "resourceType": "networkInterfaces",
+            "locations": [
+              "centralindia"
+            ]
+          },
+          {
+            "resourceType": "networkSecurityGroups",
+            "locations": [
+              "centralindia"
+            ]
+          },
+          {
+            "resourceType": "virtualNetworks",
+            "locations": [
+              "centralindia"
+            ]
+          },
+          {
+            "resourceType": "publicIpAddresses",
+            "locations": [
+              "centralindia"
+            ]
+          }
+        ]
+      },
+      {
+        "namespace": "Microsoft.Compute",
+        "resourceTypes": [
+          {
+            "resourceType": "virtualMachines",
+            "locations": [
+              "centralindia"
+            ]
+          }
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/0ad2c168-b54e-458a-baae-f7bc6583586c/resourceGroups/ACE/providers/Microsoft.Network/networkSecurityGroups/AJ-nsg",
+            "resourceType": "Microsoft.Network/networkSecurityGroups",
+            "resourceName": "AJ-nsg"
+          },
+          {
+            "id": "/subscriptions/0ad2c168-b54e-458a-baae-f7bc6583586c/resourceGroups/ACE/providers/Microsoft.Network/virtualNetworks/ACE-vnet",
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "resourceName": "ACE-vnet"
+          },
+          {
+            "id": "/subscriptions/0ad2c168-b54e-458a-baae-f7bc6583586c/resourceGroups/ACE/providers/Microsoft.Network/publicIpAddresses/AJ-ip",
+            "resourceType": "Microsoft.Network/publicIpAddresses",
+            "resourceName": "AJ-ip"
+          }
+        ],
+        "id": "/subscriptions/0ad2c168-b54e-458a-baae-f7bc6583586c/resourceGroups/ACE/providers/Microsoft.Network/networkInterfaces/aj774",
+        "resourceType": "Microsoft.Network/networkInterfaces",
+        "resourceName": "aj774"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/0ad2c168-b54e-458a-baae-f7bc6583586c/resourceGroups/ACE/providers/Microsoft.Network/networkInterfaces/aj774",
+            "resourceType": "Microsoft.Network/networkInterfaces",
+            "resourceName": "aj774"
+          }
+        ],
+        "id": "/subscriptions/0ad2c168-b54e-458a-baae-f7bc6583586c/resourceGroups/ACE/providers/Microsoft.Compute/virtualMachines/AJ",
+        "resourceType": "Microsoft.Compute/virtualMachines",
+        "resourceName": "AJ"
+      }
+    ],
+    "validationLevel": "Template"
+  }
+}
